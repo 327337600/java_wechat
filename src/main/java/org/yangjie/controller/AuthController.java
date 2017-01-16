@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.yangjie.service.AuthService;
 
 /**
@@ -61,7 +62,7 @@ public class AuthController{
 	 * @return
 	 */
 	@RequestMapping(value="/exist/{openid}")
-	public boolean isExist(@PathVariable("openid")String openid){
+	public @ResponseBody boolean isExist(@PathVariable("openid")String openid){
 		return authService.isExist(openid);
 	}
 	

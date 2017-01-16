@@ -103,14 +103,16 @@ public class AuthService {
 	 * @return
 	 */
 	public boolean isExist(String openid){
-		return authDao.isExist(openid);
+		boolean flag = authDao.isExist(openid);
+		logger.info("验证授权openid状态: {}", flag);
+		return flag;
 	}
 	
 	/**
 	 * 拉取微信用户信息(暂为实现)
 	 * 只有之前授权是scope传入snsapi_userinfo才可调用
-	 * 由于授权成功后马上调用次接口(如果需要)
-	 * 直接使用缓存的access_token, 暂不考虑失效问题(有效期2小时)
+	 * 由于授权成功后马上调用此接口(如果需要)
+	 * 直接使用之前的access_token, 暂不考虑失效问题(有效期2小时)
 	 * 此处有一个refresh_token机制, 刷新后access_token有效期达到30天, 还不清楚有什么用
 	 * @author YangJie [2016年5月5日 下午9:03:36]
 	 * @param openid
