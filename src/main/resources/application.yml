@@ -1,0 +1,18 @@
+server: 
+  port: 80
+
+config:
+  domain: http://yangjie.moko.io  ##本工程域名(用于授权回调,需要公众号配置安全域)
+  
+account:  ##微信公众号配置
+  appid: wxd548dd4ddb3cd5f4
+  secret: 237d176203e71a665d6878410d2bbd51
+       
+appList:  ##业务列表, 每增加一项业务添加对应信息
+    test:  #业务key
+      returnUrl: http://www.moko.cc #授权成功后回调地址
+
+logging:
+  level:
+    org:
+      springframework: INFO
