@@ -1,6 +1,7 @@
 package org.yangjie.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -9,7 +10,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 public class JsonUtil {
 
-	public static ObjectMapper om = new ObjectMapper();
+	public static ObjectMapper om = new ObjectMapper()
+			.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false); // 忽略未知属性
 	
 	
 	/**
@@ -60,7 +62,5 @@ public class JsonUtil {
 		}
 		return null;
 	}
-	
-	
 	
 }

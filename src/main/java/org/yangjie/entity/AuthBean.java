@@ -27,6 +27,9 @@ public class AuthBean {
 	/** 用户授权的作用域，使用逗号（,）分隔 */
 	private String scope;
 	
+	/** 区分同一用户，对同一个微信开放平台下的不同应用 */
+	private String unionid;
+	
 	
 	public String getOpenid() {
 		return openid;
@@ -57,6 +60,12 @@ public class AuthBean {
 	}
 	public void setScope(String scope) {
 		this.scope = scope;
+	}
+	public String getUnionid() {
+		return unionid;
+	}
+	public void setUnionid(String unionid) {
+		this.unionid = unionid;
 	}
 
 }
